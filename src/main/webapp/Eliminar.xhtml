@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Eliminar descuento</title>
+    </h:head>
+    <h:body>
+        <h:body>
+        <h:form id="descuento">
+            <p:growl id="growl" sticky="true" />
+            <p:dataTable id="descuentoList" var="descuento" value="#{DescuentoBean.descuento}" >
+
+                    <p:column headerText="Id">
+                        <h:outputText value="#{descuento.id}"/>
+                    </p:column>
+
+                    <p:column headerText="Producto">
+                        <h:outputText id="producto" value="#{descuento.producto}"/>
+                    </p:column>
+
+                    <p:column headerText="Codigo">
+                        <h:outputText id="codigo" value="#{descuento.codigo}"/>
+                    </p:column>
+
+                    <p:column headerText="Detalles">
+                        <h:outputText id="detalle" value="#{descuento.detalles}"/>
+                    </p:column>
+
+                    <p:column headerText="Sucursal">
+                        <h:outputText id="sucursal" value="#{descuento.sucursal}"/>
+                    </p:column>
+
+                    <p:column>
+                        <p:commandButton update="descuentoList" value="Eliminar" icon="ui-icon-closethick" action="#{DescuentoBean.Eliminar(descuento)}" styleClass="ui-priority-primary"></p:commandButton>
+                    </p:column>
+
+                </p:dataTable>
+        </h:form>
+    </h:body>
+
+    </h:body>
+</html>
+

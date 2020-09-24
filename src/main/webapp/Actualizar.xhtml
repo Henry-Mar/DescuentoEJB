@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Actualizar descuento</title>
+    </h:head>
+    <h:body>
+        <h:body>
+            <h:form id="descuento">
+                <p:growl id="growl" sticky="true" />
+                <p:dataTable id="descuentoList" var="descuento" value="#{DescuentoBean.newdescuento}">
+                    <p:column headerText="Id">
+                        <p:inputText value="#{DescuentoBean.newdescuento.id}" converter="#{BigDecimal}" disabled="false"  ></p:inputText>
+                    </p:column>
+
+                    <p:column headerText="Producto">
+                        <p:inputText id="producto" value="#{DescuentoBean.newdescuento.producto}" ></p:inputText>
+                    </p:column>
+
+                    <p:column headerText="Codigo">
+                        <p:inputText id="codigo" value="#{DescuentoBean.newdescuento.codigo}" ></p:inputText>
+                    </p:column>
+
+                    <p:column headerText="Detalles">
+                        <p:inputText id="detalles" value="#{DescuentoBean.newdescuento.detalles}" ></p:inputText>
+                    </p:column>
+
+                    <p:column headerText="Sucursal">
+                        <p:inputText id="sucursal" value="#{DescuentoBean.newdescuento.sucursal}" ></p:inputText>
+                    </p:column>
+
+                    <p:column>
+                        <p:commandButton update="descuentoList" value="Actualizar" icon="pi pi-save" action="#{DescuentoBean.Actualizar(descuento)}" 
+                          styleClass="ui-priority-primary">
+                        </p:commandButton>
+                    </p:column>
+
+                </p:dataTable>
+            </h:form>
+    </h:body>
+    </h:body>
+</html>
+
